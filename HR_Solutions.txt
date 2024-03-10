@@ -83,3 +83,21 @@ print(daysDifference)
 } 
     return fine
 }
+
+
+
+
+func cutTheSticks(arr: [Int]) -> [Int] {
+    var resultArray = [Int]()
+    var newArray = arr.sorted(by: <)
+    var i = newArray.count
+    while i >= 1 {
+           guard let minValue = newArray.min() else { return [] }
+          // print("The minimum value in the array is: \(minValue)") 
+           resultArray.append(newArray.count)
+           newArray = newArray.filter { $0 != minValue }
+           if newArray.count == 0 { break }
+    }
+
+    return resultArray
+}
