@@ -9,7 +9,7 @@ for element in scores {
 }
  return uniqueArray
 }
-
+------------------------------------------------------------------
 func climbingLeaderboard(ranked: [Int], player: [Int]) -> [Int] {
  var rankedArray = ranked
 
@@ -30,7 +30,7 @@ func climbingLeaderboard(ranked: [Int], player: [Int]) -> [Int] {
 var ranks = climbingLeaderboard(ranked: [100,100,50,40,40,20,10], player: [5,25,50,120])
 print(ranks)
 
-
+------------------------------------------------------------------
 
 
 func designerPdfViewer(h: [Int], word: String) -> Int {
@@ -45,7 +45,7 @@ func designerPdfViewer(h: [Int], word: String) -> Int {
 }
 print(designerPdfViewer(h: [1,3,1,3,1,4,1,3,2,5,5,5,5,1,1,5,5,1,5,2,5,5,5,5,5,5], word: "torn"))
 
-
+------------------------------------------------------------------
 func libraryFine(d1: Int, m1: Int, y1: Int, d2: Int, m2: Int, y2: Int) -> Int {
 
      let dateFormatter = DateFormatter()
@@ -83,7 +83,7 @@ print(daysDifference)
 } 
     return fine
 }
-
+------------------------------------------------------------------
 
 
 
@@ -101,3 +101,4 @@ func cutTheSticks(arr: [Int]) -> [Int] {
 
     return resultArray
 }
+------------------------------------------------------------------
