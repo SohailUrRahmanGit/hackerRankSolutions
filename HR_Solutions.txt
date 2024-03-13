@@ -123,3 +123,27 @@ func repeatedString(s: String, n: Int) -> Int {
         return aCount + remainingACount
     }
 }
+
+-------------------------------------------------------------
+
+func jumpingOnClouds(c: [Int]) -> Int {
+  var numberOfJumps = 0
+  var zeroCount = 1
+  var index = 1
+  while(index < c.count) {
+    if c[index] == 0 {
+      if zeroCount == 2  {
+          zeroCount = 0
+          numberOfJumps -= 1 
+      }
+       numberOfJumps += 1 
+       zeroCount += 1
+    } else {
+          zeroCount = 0
+      }
+      index += 1 
+  }
+  return numberOfJumps 
+}
+print(jumpingOnClouds(c: [0,0,0,1,0,0])) //3 jump
+print(jumpingOnClouds(c: [0,0,1,0,0,1,0])) //4jump
