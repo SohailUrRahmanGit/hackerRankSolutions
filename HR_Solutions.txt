@@ -102,3 +102,24 @@ func cutTheSticks(arr: [Int]) -> [Int] {
     return resultArray
 }
 ------------------------------------------------------------------
+
+/*
+ * Complete the 'repeatedString' function below.
+ *
+ * The function is expected to return a LONG_INTEGER.
+ * The function accepts following parameters:
+ *  1. STRING s
+ *  2. LONG_INTEGER n
+ */
+
+func repeatedString(s: String, n: Int) -> Int {
+    let characters: [Character] = Array(s)
+    if n == 1 {
+        return characters[0] == "a" ? n:0
+    } else {
+        let aCount = s.filter({ $0 == "a"}).count * Int(n/s.count)
+        print(aCount)
+        let remainingACount = characters[0..<(n%s.count)].filter({ $0 == "a"}).count
+        return aCount + remainingACount
+    }
+}
