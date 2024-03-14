@@ -1,6 +1,49 @@
 var finalRank  : [Int] = []
 var uniqueArray = [Int]()
 
+func equalizeArray(arr: [Int]) -> Int {
+    var dictionary = [Int: Int]()
+    var valuesArray = [Int]()
+
+ for (_,valueAsKey) in arr.enumerated() {
+     if let count = dictionary[valueAsKey] {
+       dictionary[valueAsKey] = count + 1
+       } else {
+         dictionary[valueAsKey] = 1
+        }
+ }
+
+ if let maxValue = dictionary.values.max() {
+ if maxValue == 1 {
+    return dictionary.count - 1
+ }
+ 
+ if let key = getKey(forValue: maxValue, in: dictionary) {
+    print("The key for value  is \(key)")
+
+
+ for (ket, value) in dictionary where  ket != key {
+   print(value)
+   valuesArray.append(value)
+  }
+} 
+} 
+print(dictionary)
+print(valuesArray)
+let totalValues = valuesArray.reduce(0, +)
+return totalValues
+}
+
+func getKey<K, V: Equatable>(forValue value: V, in dictionary: [K: V]) -> K? {
+    return dictionary.first { $0.value == value }?.key
+}
+
+var arr = [35, 65, 69, 28, 12, 69, 37, 80, 80, 50, 80, 50, 15, 57, 79, 69, 57, 65, 15, 69, 57, 50, 65, 2 ,14, 64, 15, 65, 65 ,5 ,15, 64, 57, 37, 50, 12, 64, 37, 28, 20, 80, 80, 50]
+
+print( equalizeArray(arr: arr))
+
+---------------------------------------------------------
+
 func getRank(scores: [Int]) -> [Int] {
 for element in scores {
     if !uniqueArray.contains(element) {
