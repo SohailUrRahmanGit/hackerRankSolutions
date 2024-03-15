@@ -190,3 +190,16 @@ func jumpingOnClouds(c: [Int]) -> Int {
 }
 print(jumpingOnClouds(c: [0,0,0,1,0,0])) //3 jump
 print(jumpingOnClouds(c: [0,0,1,0,0,1,0])) //4jump
+
+-------------------------------------------------------------------
+
+func camelcase(s: String) -> Int {
+var count = 0   
+let characters = Array(s)
+for c in characters {
+    if c.isUppercase {
+        count += 1
+    }
+}
+return count + 1
+}
