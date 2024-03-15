@@ -203,3 +203,19 @@ for c in characters {
 }
 return count + 1
 }
+
+---------------------------------------------------------------------------
+
+func strangeCounter(t: Int) -> Int64 {
+    var time = Int64(t)
+    var initialValue: Int64 = 3
+    
+    // Finding the interval within which the given time falls
+    while time > initialValue {
+        time -= initialValue
+        initialValue *= 2
+    }
+    
+    // Calculate the value of the counter at time t
+    return initialValue - time + 1
+}
