@@ -1,3 +1,31 @@
+func funnyString(s: String) -> String {
+    var straightAsciiArray = [Int]()
+    var reversedAsciiArray = [Int]()
+    var straight = [Int]()
+    var reversed = [Int]()
+    
+ for character in s {
+    let asciiValue = Int(character.asciiValue ?? 0)
+    straightAsciiArray.append(asciiValue)
+}
+   reversedAsciiArray =  straightAsciiArray.reversed()
+   var i = 0
+   while i < straightAsciiArray.count - 1 && i < reversedAsciiArray.count - 1 {
+        straight.append(abs(straightAsciiArray[i] - straightAsciiArray[i + 1]))
+        reversed.append(abs(reversedAsciiArray[i] - reversedAsciiArray[i + 1]))
+        i += 1
+    }
+    if straight == reversed {
+        return "Funny"
+    } else {
+       return "Not Funny" 
+    }
+}
+
+print(funnyString(s:"bcxz"))
+
+
+-------------------------------------------------------------------
 func minimumNumber(n: Int, password: String) -> Int {
     let minLength = 6
     var missingCriteria = 0
