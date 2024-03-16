@@ -1,3 +1,37 @@
+func minimumNumber(n: Int, password: String) -> Int {
+    let minLength = 6
+    var missingCriteria = 0
+    var missingLength = 0
+
+    if n < minLength {
+        //missingCriteria += 1
+        missingLength = minLength - n
+        print(missingLength)
+    }
+
+    if !password.contains(where: { $0.isNumber }) {
+        print("missing a Number")
+        missingCriteria += 1
+    } 
+    
+    if !password.contains(where: { $0.isLowercase }) {
+        print("missing a lower case")
+        missingCriteria += 1
+    } 
+    if !password.contains(where: { $0.isUppercase }) {
+        print("missing a upper case")
+        missingCriteria += 1
+    } 
+    
+    if !password.contains(where: { "!@#$%^&*()-+".contains($0) })  {
+        print("missing a special character ")
+        missingCriteria += 1
+    } 
+    return max(missingCriteria, missingLength)
+}
+
+
+----------------------------------------------------------------------------
 var finalRank  : [Int] = []
 var uniqueArray = [Int]()
 
