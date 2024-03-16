@@ -1,3 +1,19 @@
+func hackerrankInString(s: String) -> String {
+var stringToSearch = Array("hackerrank")
+var fromString = String(s.reversed())
+for (_,v) in stringToSearch.enumerated() {
+if fromString.contains(v) { 
+  if let index = fromString.lastIndex(of: v) {
+        fromString.removeSubrange(index..<fromString.endIndex) 
+  } 
+} else { 
+    return "NO"
+}
+    }
+return "YES"
+}
+
+---------------------------
 func funnyString(s: String) -> String {
     var straightAsciiArray = [Int]()
     var reversedAsciiArray = [Int]()
